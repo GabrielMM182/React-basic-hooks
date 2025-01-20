@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "push": "git add . && git commit -m \"update\" && git push"
+    "push": "git add . && git commit -m \"update\" && git push",
+    "fakeDB": "json-server db.json"
+
   },
   "dependencies": {
     "@tanstack/react-query": "^5.64.2",
