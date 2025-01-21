@@ -11,6 +11,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import FetchWithReactQueryAndAxios from "./components/UseEffect/ReactQueryExemple";
 import InputFocusExample from "./components/UseRef/useRef";
 import UserRegistrationForm from "./components/UseRef/useRef";
+import UserForm from "./components/UseContext/UserForm";
+import UserProfile from "./components/UseContext/UserProfile";
+import { UserProvider } from "./components/UseContext/UserProvider";
+import UserFormZod from "./components/UseContext/UserFormZodLib";
+import { Provider } from "react-redux";
+import { store } from "./components/redux/store";
+import UserFormRedux from "./components/redux/UserForm";
+import UserProfileRedux from "./components/redux/UserProfile";
 
 const queryClient = new QueryClient();
 
@@ -27,7 +35,16 @@ function App() {
       {/* <QueryClientProvider client={queryClient}>
         <FetchWithReactQueryAndAxios />
       </QueryClientProvider> */}
-      <UserRegistrationForm/>
+      {/* <UserRegistrationForm/> */}
+      {/* <UserProvider> */}
+      {/* <UserForm /> */}
+      {/* <UserFormZod/>
+        <UserProfile />
+      </UserProvider> */}
+      <Provider store={store}>
+        <UserFormRedux />
+        <UserProfileRedux />
+      </Provider>
     </>
   );
 }
